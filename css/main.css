@@ -32,3 +32,16 @@ table td th{
     border: 1px solid gray
     
 }
+
+
+label{
+    float: left;
+    width: 200px;
+} 
+
+form{
+    border-color: black;
+    width: 600px;
+    background-color: lightgray;
+    height: 200px;
+}

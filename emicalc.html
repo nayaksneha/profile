@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet " href="css/main.css">
+    <title>EMI calculator</title>
+    <script type = "text/javascript">
+     function showResult(){
+        
+        p = parseFloat(document.getElementById("amount").value)
+        r = parseFloat(document.getElementById("roi").value)
+        n = parseFloat(document.getElementById("duration").value)
+        ri=r/1200
+        EMI = p*ri/(1-(Math.pow(1/(1+ri),n)))
+        res = "amount:"+p+"<br>roi:"+r+"<br>duration:"+n+"<br>emi:"+EMI
+        document.getElementById("res").innerHTML = res;
+        
+     }
+    
+    
+    </script>
+</head>
+<body>
+    <h3>EMI calculator example:</h3>
+    <form>
+        <fieldset>
+            <legend>emi calculator
+            </legend>
+
+
+        
+        <p>
+            <label>Amount:</label>
+            <input type="text" name="amount" id="amount">
+        </p>
+        <p>
+            <label>Duration:</label>
+            <input type="text" name="duration" id="duration">
+
+        </p>
+        <p>
+                <label>Rate of Interest:</label>
+                <input type="text" name="roi" id="roi">
+    
+        </p>
+        <p>
+                <label>&nbsp;</label>
+                <input type="button" value="calculate" onclick="showResult()">
+    
+            </p>
+        </fieldset>
+    </form>
+    <hr>
+    <div id= "res" ></div>
+
+</body>
+</html>
